@@ -70,7 +70,7 @@ void loop() {
     if(n==5)
     {
       delay(200);
-      while(j<21)
+      while(j<11)
       {
         button_in = digitalRead(button);
         if(button_in == HIGH)
