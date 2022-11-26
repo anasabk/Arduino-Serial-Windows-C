@@ -21,27 +21,29 @@ char* readcom(HANDLE rhComm, BOOL rStatus, char* dest)
 {
     DWORD received;
     DWORD dwEventMask;
-    char buffer[1024];
+    char buffer[4096];
     int i = 0;
 
     rStatus = SetCommMask(rhComm, EV_RXCHAR);
 
     if (!rStatus) {
-        printf("Error while applying CommMask\n");
+        return "Error while applying CommMask\n";
         exit(0);
     }
 
     WaitCommEvent(rhComm, &dwEventMask, NULL);
         
-    while (i < 10) {
+    while (i < 1024) {
         rStatus = ReadFile(rhComm, &buffer[i], 1, &received, NULL);
         if (!rStatus) {
-            printf("Error while Reading\n");
+            return "Error while Reading\n";
             exit(0);
         }
         
-        if (buffer[i] == '\n')
+        if (buffer[i] == '\n') {
+            buffer[i] = 0;
             break;
+        }
 
         ++i;
     }
@@ -49,7 +51,7 @@ char* readcom(HANDLE rhComm, BOOL rStatus, char* dest)
     buffer[i] = 0;
     strcpy(dest, buffer);
 
-    return dest;
+    return TRUE;
 }
 
 /*----------------------------- Writing an Integer to the Serial Port----------------------------------------*/
