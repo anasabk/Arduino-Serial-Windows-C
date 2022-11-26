@@ -74,7 +74,7 @@ int writecomint(int input, HANDLE whComm, BOOL wStatus)
     return 0;
 }
 
-/*----------------------------- Writing a Character to the Serial Port----------------------------------------*/
+/*----------------------------- Writing a String to the Serial Port----------------------------------------*/
 
 int writecomchar(char* inputS, HANDLE whComm, BOOL wStatus)
 {
