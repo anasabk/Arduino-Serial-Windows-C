@@ -60,7 +60,6 @@ int writecomint(int input, HANDLE whComm, BOOL wStatus)
     char lpBuffer[8] = "\0\0\0\0\0\0\0\0";  // lpBuffer should be  char or byte array, otherwise write wil fail
     DWORD dNoOFBytestoWrite;     // No of bytes to write into the port
     DWORD dNoOfBytesWritten = 0; // No of bytes written to the port
-    int digitNum = 0;
 
     sprintf(lpBuffer, "%d", input);
     dNoOFBytestoWrite = (int)(log10(input) + 1); // Calculating the no of bytes to write into the port
