@@ -73,7 +73,7 @@ void loop() {
     else if(data_in == 5) { 
       bool button_in1 = 0, button_in2 = 0;
       int i = 1;
-      while(i < 110) {   //Keep running until the counter reaches 11
+      while(1) {
         if (Serial.read() == 'a') break;
         if (digitalRead(button) == HIGH) {
           Serial.println(i);
