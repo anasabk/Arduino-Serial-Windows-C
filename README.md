@@ -1,5 +1,5 @@
 # Arduino-Serial-Windows-C
-This is a project that aims to provide communication between a program written in C and a an Arduino board through serial communication.
+This project aims to provide communication between a program written in C and an Arduino board through serial communication.
 A Youtube link to a video that shows the functionality: https://youtu.be/F0RoCAdm830
 
 The provided functionalities are:
